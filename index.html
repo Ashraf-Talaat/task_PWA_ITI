@@ -18,9 +18,21 @@
       <a href="about.html" class="nav-link">About</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
+
     <main>
       <h1>Welcome to ZagazigApp</h1>
       <p>This is a simple PWA app.</p>
     </main>
+
+    <!-- JavaScript Files -->
+    <script src="script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("sw.js")
+          .then((reg) => console.log("Service Worker Registered!", reg.scope))
+          .catch((err) => console.error("Service Worker registration failed", err));
+      }
+    </script>
   </body>
 </html>
